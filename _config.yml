@@ -21,7 +21,7 @@
 title: Michael Mendez
 email: michael.dez@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-Watch me learn new technologies until I become frustrated, angrily rice debian in retaliation, and eventually stop worrying and love the bomb.
+        Watch me learn new technologies until I become frustrated, angrily rice debian in retaliation, and eventually stop worrying and love the bomb.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://michael-dez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
