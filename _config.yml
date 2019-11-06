@@ -28,7 +28,7 @@ url: "https://michael-dez.github.io" # the base hostname & protocol for your sit
 github_username:  michael-dez
 
 # Build settings
-theme: jekyll-theme-midnight
+theme: minima
 plugins:
         - jekyll-feed
 
