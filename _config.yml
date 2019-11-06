@@ -28,9 +28,9 @@ url: "https://michael-dez.github.io" # the base hostname & protocol for your sit
 github_username:  michael-dez
 
 # Build settings
-theme: minima
+theme: jekyll-theme-midnight
 plugins:
-        #  - jekyll-feed
+        - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
