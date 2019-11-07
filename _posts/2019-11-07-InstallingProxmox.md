@@ -8,7 +8,7 @@ About a month ago, a good friend told me that he had come across a rack-mount se
 
 
 
-<img src="{{site.baseurl}}/assets/img/2019-11-07-pic1">
+![image](/assets/img/2019-11-07-pic1.png)
 
 
 
@@ -16,7 +16,7 @@ I’m pretty sure I have broken almost every intel heatsink that I have attempte
 
 
 
-<img src="{{site.baseurl}}/assets/img/2019-11-07-pic2">
+![image](/assets/img/2019-11-07-pic2.png)
 
 
 
@@ -47,7 +47,7 @@ My plan was to download Proxmox onto my Debian Virtual Machine (VM), write the i
 ## Installation
 Plug the newly imaged flash drive into the Proxmox host and change your boot options to boot from the flash drive.   Boot, and hopefully you should see a splash screen!
 
-<img src="{{site.baseurl}}/assets/img/2019-11-07-pic3">
+![image](/assets/img/2019-11-07-pic3.png)
 
   The rest of the installation should be pretty straight-forward.  Follow along with the installation wizard and make sure that you assign the appropriate:
 
