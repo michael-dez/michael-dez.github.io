@@ -2,7 +2,7 @@
 layout: post
 title: Installing a Bare Metal Hypervisor Using the Proxmox Virtual Environment
 ---
-[comment]: # (Installing a Bare Metal Hypervisor Using the Proxmox Virtual Environment)
+[comment]: # (Installing a Bare Metal Hypervisor Using the Proxmox Virtual Environment: testing)
 ## Aquiring the Proxmox Host
 About a month ago, a good friend told me that he had come across a rack-mount server laying around his work and asked if I was interested. “Yes”, I said.
 
