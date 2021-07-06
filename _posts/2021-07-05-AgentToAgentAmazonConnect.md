@@ -7,7 +7,7 @@ The AWS Knowledge Center recently published [article](https://aws.amazon.com/pre
 If you don't already have an Amazon Connect instance created, navigate to the service from the management console. Select **Add an instance** and the instance creation will start. The first step is to choose the method of identity management. I went with **Store users within Amazon Connect**. Step 2, create an admin. Step 3, check the boxes for incoming and outbound and select next until you create the instance.
 ### Create a DynamoDB Table
 Follow the instructions in the article. The table must be named **AgenttoAgent** unless the table name is changed in the Lambda Function we will create shortly . When adding items to the table, the field for the agent's login name should be named exactly what the variable is named in the later Lambda Function. The items in your table should look something like this. Make sure to take note of the table's ARN which can be found in the **Overview** tab
-![]({{site.url}}/assets/DBTableItem)
+![image](/assets/img/DBTableItem.png)
 ### Create an IAM Role
 Create a role from the IAM Console and when it prompts you to select a policy, select **Create policy**. Select the **JSON** tab and paste the JSON policy. 
 ```javascript
@@ -46,16 +46,16 @@ Create a new Lambda Function from the Lambda Console. Choose a Python runtime ab
 ### Add Lambda Function to Amazon Connect
 Go to the Amazon Connect Console. Select your instance. Select the **Contact Flows** tab on the left and under **AWS Lambda** select your function and Add
 
-![]({{site.url}}/assets/ConnectLambdaAdd)
+![image](/assets/img/ConnectLambdaAdd.png)
 ### Create Call Flows and Quick Connect
-The instructions to create the call flows and the quick connect are pretty straight forward. Here's what mine looked like ![queue flow]({{site.url}}/assets/queueFlow_2021-07-05_194737)
-![contact flow]({{site.url}}/assets/ContactFlow)
+The instructions to create the call flows and the quick connect are pretty straight forward. Here's what mine looked like ![image](/assets/img/queueFlow_2021-07-05_194737.png)
+![image](/assets/img/ContactFlow.png)
 ### Test
 I created two users and added an extension for one of them. I also set the one with an extension to use a "deskphone" from their Contact Control Panel so I could forward the call to my cell. 
-![]({{site.url}}/assets/extensionDial_2021-07-05_202014)
-![]({{site.url}}/assets/extensionDialConnected2021-07-05_202051)
+![image](/assets/img/extensionDial_2021-07-05_202014.png)
+![image](/assets/img/extensionDialConnected2021-07-05_202051.png)
 ### Conclusion
-I was suspicious that because this works by dialing the number associated to the inbound queue we created earlier that users without the quick connect could still use the feature by dialing the number directly. I switched my user back to softphone, called the associated number, and was still able to connect to the user by extension.![]({{site.url}}/assets/manualConnect)
+I was suspicious that because this works by dialing the number associated to the inbound queue we created earlier that users without the quick connect could still use the feature by dialing the number directly. I switched my user back to softphone, called the associated number, and was still able to connect to the user by extension.![image](/assets/img/manualConnect.png)
 In my next post we'll look at what can be done to prevent unauthorized users from accessing the feature.
 
 
