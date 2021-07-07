@@ -2,9 +2,9 @@
 layout: post
 title: Agent to Agent Calls in Amazon Connect
 ---
-The AWS Knowledge Center recently published [article](https://aws.amazon.com/premiumsupport/knowledge-center/connect-agent-to-agent-extensions/) on how to set up agent to agent calling in Amazon Connect. I created an Amazon Connect instance and tried it out. The article got me most of the way there but I'll go into detail on anything that I found confusing or I believe wasn't explained. 
+The AWS Knowledge Center recently published an [article](https://aws.amazon.com/premiumsupport/knowledge-center/connect-agent-to-agent-extensions/) on how to set up agent to agent calling in Amazon Connect. I created an Amazon Connect instance to try it out and learn more about the service.  The article got me most of the way there but I'll go into detail on anything that I found confusing or I believe could have been explained better. 
 ### Create an Amazon Connect Instance
-If you don't already have an Amazon Connect instance created, navigate to the service from the management console. Select **Add an instance** and the instance creation will start. The first step is to choose the method of identity management. I went with **Store users within Amazon Connect**. Step 2, create an admin. Step 3, check the boxes for incoming and outbound and select next until you create the instance.
+If you don't already have an Amazon Connect instance created, navigate to the service from the management console. Select **Add an instance** and the instance creation wizard  will start. The first step is to choose the method of identity management. I went with **Store users within Amazon Connect**. Step 2, create an admin. Step 3, check the boxes for incoming and outbound and select next until you create the instance.
 ### Create a DynamoDB Table
 Follow the instructions in the article. The table must be named **AgenttoAgent** unless the table name is changed in the Lambda Function we will create shortly . When adding items to the table, the field for the agent's login name should be named exactly what the variable is named in the later Lambda Function. The items in your table should look something like this. Make sure to take note of the table's ARN which can be found in the **Overview** tab
 ![image](/assets/img/DBTableItem.png)
@@ -55,9 +55,8 @@ I created two users and added an extension for one of them. I also set the one w
 ![image](/assets/img/extensionDial_2021-07-05_202014.png)
 ![image](/assets/img/extensionDialConnected2021-07-05_202051.png)
 ### Conclusion
-I was suspicious that because this works by dialing the number associated to the inbound queue we created earlier that users without the quick connect could still use the feature by dialing the number directly. I switched my user back to softphone, called the associated number, and was still able to connect to the user by extension.![image](/assets/img/ManualConnect_2021-07-05_205638.png)
+I was suspicious that because this works by dialing the number associated to the inbound queue we created earlier that users without the quick connect could still use the feature by dialing the number directly. I switched my user back to softphone, called the associated number, and was still able to connect to the user by extension.
+
+![image](/assets/img/ManualConnect_2021-07-05_205638.png)
+
 In my next post we'll look at what can be done to prevent unauthorized users from accessing the feature.
-
-
-
-
