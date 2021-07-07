@@ -55,7 +55,7 @@ I created two users and added an extension for one of them. I also set the one w
 ![image](/assets/img/extensionDial_2021-07-05_202014.png)
 ![image](/assets/img/extensionDialConnected2021-07-05_202051.png)
 ### Conclusion
-I was suspicious that because this works by dialing the number associated to the inbound queue we created earlier that users without the quick connect could still use the feature by dialing the number directly. I switched my user back to softphone, called the associated number, and was still able to connect to the user by extension.![image](/assets/img/manualConnect.png)
+I was suspicious that because this works by dialing the number associated to the inbound queue we created earlier that users without the quick connect could still use the feature by dialing the number directly. I switched my user back to softphone, called the associated number, and was still able to connect to the user by extension.![image](/assets/img/ManualConnect_2021-07-05_205638.png)
 In my next post we'll look at what can be done to prevent unauthorized users from accessing the feature.
 
 
