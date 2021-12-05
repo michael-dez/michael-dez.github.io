@@ -1,5 +1,4 @@
 ﻿---
-layout: post
 title: Agent to Agent Calls in Amazon Connect
 ---
 The AWS Knowledge Center recently published an [article](https://aws.amazon.com/premiumsupport/knowledge-center/connect-agent-to-agent-extensions/) on how to set up agent to agent calling in Amazon Connect. I created an Amazon Connect instance to try it out and learn more about the service.  The article got me most of the way there but I'll go into detail on anything that I found confusing or I believe could have been explained better. 

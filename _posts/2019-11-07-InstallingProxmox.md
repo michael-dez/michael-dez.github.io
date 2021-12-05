@@ -1,6 +1,5 @@
 ﻿---
-layout: post
-title: Installing a Bare Metal Hypervisor Using the Proxmox Virtual Environment
+title: Installing Proxmox
 ---
 [comment]: # (Installing a Bare Metal Hypervisor Using the Proxmox Virtual Environment: testing)
 ## Aquiring the Proxmox Host
