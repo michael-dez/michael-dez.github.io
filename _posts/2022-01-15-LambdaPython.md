@@ -1,7 +1,7 @@
 ﻿---
 title: "Agent to Agent Calls in Connect: Lambda"
 author_profile: true
-excerpt: "/"It's JSON all the way down./" -Marco Polo"
+excerpt: "\"It's JSON all the way down.\" -Marco Polo"
 header:
   overlay_image: /assets/img/home-header.jpg
   actions:
