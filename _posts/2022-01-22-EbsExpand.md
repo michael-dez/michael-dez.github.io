@@ -1,11 +1,8 @@
 ---
 title: "Expanding An EBS Root Volume"
-author_profile: true
-header:
-  overlay_image: /assets/img/home-header.jpg
 ---
 # Expanding An EBS Root Volume
-I'm prepping to install Kubernetes on an existing EC2 instance I use for FoundryVTT and a ProjectZomboid multiplayer server currently running in a Docker container. First thing I wanted to do was increase the size of the File System. Nothing worse than running out of space when you don't feel like doing anything. To clarify when I refer to the volume I mean the actual size of the EBS storage. The partition is the portion that must be manually allocated for use and then formatted with a file system. So in this case we need to increase the size of the volume, extend the partition, and extend the file system in that order.
+I'm prepping to install Kubernetes on an EC2 instance I'm using for FoundryVTT and a ProjectZomboid multiplayer server. First thing I wanted to do was increase the size of the File System. Nothing worse than running out of space when you just want everything to work. There are a few words used that are easy to confuse so to clarify, when I refer to the volume I mean the actual EBS storage. The partition is what must be manually allocated for use and then finally formatted with a file system. So in this case we need to increase the size of the volume, extend the partition, and extend the file system in that order.
 ## Create a Snapshot
 List volumes:
 ```bash
@@ -24,12 +21,12 @@ Monitor progress, can proceed after entering optimizing state:
 ```bash
 aws ec2 describe-volumes-modifications --volume-ids <value>
 ```
-## Extend Partion
+## Extend Partition
 Identify the filesystem, Amazon Linux/RHEL under 'type' column:
 ```bash
 df -Ht
 ```
-Locate the name of the partion to be extended with `lsblk` command:
+Locate the name of the partition to be extended with `lsblk` command:
 ```bash
 [ec2-user ~]$ lsblk
 NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
