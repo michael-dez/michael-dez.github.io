@@ -1,7 +1,6 @@
 ---
 title: "Expanding An EBS Root Volume"
 ---
-# Expanding An EBS Root Volume
 I'm prepping to install Kubernetes on an EC2 instance I'm using for FoundryVTT and a ProjectZomboid multiplayer server. First thing I wanted to do was increase the size of the File System. Nothing worse than running out of space when you just want everything to work. There are a few words used that are easy to confuse so to clarify, when I refer to the volume I mean the actual EBS storage. The partition is what must be manually allocated for use and then finally formatted with a file system. So in this case we need to increase the size of the volume, extend the partition, and extend the file system in that order.
 ## Create a Snapshot
 List volumes:
@@ -46,7 +45,7 @@ Verify new partition size with `lsblk`
 ## Extend File System
 XFS:
 ```bash
-sudo xfs_growfs -d <mount point e.g. "/>
+sudo xfs_growfs -d <mount point e.g. />
 ```
 ext4:
 ```bash
