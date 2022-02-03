@@ -21,7 +21,7 @@ Monitor progress, can proceed after entering optimizing state:
 aws ec2 describe-volumes-modifications --volume-ids <value>
 ```
 ## Extend Partition
-Identify the filesystem, Amazon Linux/RHEL under 'type' column:
+Identify the filesystem, for Amazon Linux/RHEL listed under 'type' column:
 ```bash
 df -Ht
 ```
