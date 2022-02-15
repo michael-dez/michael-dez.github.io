@@ -2,7 +2,8 @@
 title: Provision Route53 DNS Records with the AWS CLI
 ---
 
-I'm still dedicated to doing as much as I can through the AWS CLI while I'm working on these learning projects. I've learned a ton this way and it's giving me better insight to how the services work. I'm also enjoying the process of developing a new writing style. Like everything it's still a work in progress so I'll probably go back and change things around when I've found a style and process I'm happy with.
+Update, i'm still dedicated to doing as much as I can through the AWS CLI. I've learned a ton this way and it's given me better insight into what's possible with different aws services. Learned a ton about using `sed` as well. Even though the find/replace in vim is nearly identical to sed it took me a few hours of reading the docs and stackoverflow posts about the syntax for regular expressions to really get the hang of it. While sed's an awesome tool to know, next time I think I want to try a [command line tool](https://stedolan.github.io/jq/) that can interact with serialized data more easily. Like everything my writing style is still a work in progress so I'll probably go back and change things around when I've found something I vibe with.
+
 **Note:** This process follows the creation of an A record and assumes the public IP to be associated is already known
 
 ## Get Hosted Zone ID
@@ -13,11 +14,11 @@ aws route53 list-hosted-zones-by-name --output=text | grep $dname | sed -n "s/^.
 ```
 
 ## Get the CLI Skeleton
-I may try out a [command line tool](https://stedolan.github.io/jq/) to interact with serialized data soon but until then let's just make some yaml for the request.
+Write some yaml for the request.
 ```bash
 aws route53 change-resource-record-sets --generate-cli-skeleton yaml-input > change-record.yaml
 ```
-That gives us the skeleton. I changed the action to upsert, name to jenkins.bigkea.com, type to A, and public IP to value.
+That gives us the skeleton. I changed the `Action:` to `UPSERT` (updates record if record exists/inserts new record if record doesn't exist), `Name:` to `jenkins.bigkea.com`, `Type:` to `A`, and `Value:` to my public IP. I deleted unused lines so if you were making a `cname` record, you would change value to `CNAME` and fill out the cname specific lines using an original skeleton.
 ```yaml
 HostedZoneId: '<zone-id>'  # [REQUIRED] The ID of the hosted zone that contains the resource record sets that you want to change.
 ChangeBatch: # [REQUIRED] A complex type that contains an optional comment and the Changes element.
@@ -36,3 +37,8 @@ Now finally make the request.
 ```bash
 aws route53 change-resource-record-sets --cli-input-yaml file://record-set.yaml
 ```
+You can confirm the record set was created with:
+```bash
+aws route53 list-resource-record-sets --hosted-zone-id <zone-id>
+```
+
