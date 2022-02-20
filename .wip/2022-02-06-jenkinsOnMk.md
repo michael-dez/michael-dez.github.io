@@ -13,7 +13,7 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 ```
 
-## Configure Helm
+## Add Jenkins Repo
 ```bash
 repo add jenkinsci https://charts.jenkins.io
 helm repo update
@@ -34,13 +34,17 @@ sudo mkdir /data/jenkins-volume
 # correct folder permissions
 sudo chown -R 1000:1000 /data/jenkins-volume
 ```
-## Create the service account
+## Create a service account
+Download the yaml template.
 ```bash
 curl -o ~/k8s/jenkins-sa.yaml https://raw.githubusercontent.com/jenkins-infra/jenkins.io/master/content/doc/tutorials/kubernetes/installing-jenkins-on-kubernetes/jenkins-sa.yaml
 k apply -f jenkins-sa.yaml
 ```
-
-## Install Jenkins
+Create the account.
+```bash
+kubectl apply -f jenkins-sa.yaml
+```
+## Deploy Jenkins
 ```bash
 # create override file
 curl -o ~/k8s/jenkins-values.yaml https://raw.githubusercontent.com/jenkinsci/helm-charts/main/charts/jenkins/values.yaml
@@ -53,6 +57,16 @@ create: false
 name: jenkins
 annotations: {}
 ```
+Deploy.
+```bash
+chart=jenkinsci/jenkins \
+helm install jenkins -n jenkins -f jenkins-values.yaml $chart
+```
+Verify the service is running. Default settings should show the service `jenkins` running on port 8080.
+```bash
+k get svc -n jenkins
+```
+## Apply  
 ## Configure Ingress
 TODO: Left off at Get your 'admin' user password by running:
 
@@ -60,4 +74,3 @@ TODO: Left off at Get your 'admin' user password by running:
 ## Reference
 https://www.jenkins.io/doc/book/installing/kubernetes/[1](https://www.jenkins.io/doc/book/installing/kubernetes/)
 https://helm.sh/docs/intro/install/[2](https://helm.sh/docs/intro/install/)
-
