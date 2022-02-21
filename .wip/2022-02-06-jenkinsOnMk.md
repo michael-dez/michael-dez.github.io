@@ -15,7 +15,7 @@ chmod 700 get_helm.sh
 
 ## Add Jenkins Repo
 ```bash
-repo add jenkinsci https://charts.jenkins.io
+helm repo add jenkinsci https://charts.jenkins.io
 helm repo update
 # search charts in repo
 helm search repo jenkinsci
@@ -57,8 +57,6 @@ create: false
 name: jenkins
 annotations: {}
 ```
-Deploy.
-```bash
 chart=jenkinsci/jenkins \
 helm install jenkins -n jenkins -f jenkins-values.yaml $chart
 ```
