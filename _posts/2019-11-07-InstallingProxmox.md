@@ -1,5 +1,13 @@
 ﻿---
 title: Installing Proxmox
+tags:
+  - proxmox
+  - virtualization
+  - virtual machine
+  - how-to
+  - linux
+  - hardware
+  - home networking
 ---
 [comment]: # (Installing a Bare Metal Hypervisor Using the Proxmox Virtual Environment: testing)
 ## Aquiring the Proxmox Host

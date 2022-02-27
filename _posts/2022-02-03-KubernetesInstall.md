@@ -1,5 +1,13 @@
 ---
 title: "Minikube Setup on EC2"
+tags:
+  - aws
+  - ec2
+  - minikube
+  - kubernetes
+  - docker
+  - how-to
+  - alias
 ---
 
 The plan right now is to migrate my FoundryVTT and Project Zomboid servers to Kubernetes and run a Jenkins pod to learn more about CI/CD pipelines. It would also really save me time to automate httpd configs and ssl cert management in the near future. Anyway, I only want a single node so I'm using Minikube and in this post I'll be installing it.

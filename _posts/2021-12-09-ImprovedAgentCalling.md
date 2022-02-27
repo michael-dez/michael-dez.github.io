@@ -7,6 +7,11 @@ header:
   actions:
     - label: "View on Github"
       url: "https://github.com/michael-dez/awsconnect-extensions"
+tags:
+  - aws
+  - amazon connect
+  - dynamodb
+  - nosql
 ---
 ## Overview
 I got some feedback after my original post that it would be tedious maintaining a DynamoDB table for agent extensions. 

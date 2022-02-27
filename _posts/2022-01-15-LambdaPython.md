@@ -7,6 +7,11 @@ header:
   actions:
     - label: "View on Github"
       url: "https://github.com/michael-dez/awsconnect-extensions"
+tags:
+  - aws
+  - amazon connect
+  - lambda
+  - python
 ---
 ## Overview
 Before I go into the Lambda I want to take a minute to explain some changes I'm making to future posts. Firstly, I've found it very difficult to maintain a consistent pace of writing. The last thing I want to do after finishing a project is a write-up of the project because I'm already thinking about the next thing I want to learn. I still want to document what I'm learning in my free time and I think I would especially benefit from better note taking. So I intend to post more frequently, with a greater focus on brief and instructive writing. My intention is to take better notes as I work so that the posts can be released as the work is completed. This will help tremendously with the writing process as writing about things I did a month prior really slows me down, and makes the thought of sitting down to write somewhat dreadful. I also think pragmatic, instructive posts will be the most useful to both myself and readers... after this long winded write up. With that, to the Lambda.

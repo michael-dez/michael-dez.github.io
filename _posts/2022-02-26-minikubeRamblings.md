@@ -1,5 +1,7 @@
 ---
 title: Minikube Project Ramblings
+tags:
+  - ramblings
 ---
 ## The Obstacle is the Way
 I've been working with Minikube the past couple weeks and the learning curve has been steep. My goal was to get Jenkins up and running. I got it installed but while I was trying to expose the ingress for my Jenkins service I realized that Minikube may not do what I need it to.  The problem I had was in exposing Minikube to the Internet and while reading the docs I realized that just isn't what it's for. I still want to migrate some of my personal workloads to Kubernetes but my initial goal was to learn Jenkins so I'm going to choose an easier installation method and focus on that for the time being.

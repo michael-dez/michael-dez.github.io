@@ -1,5 +1,11 @@
 ---
 title: Provision Route53 DNS Records with the AWS CLI
+tags:
+  - aws
+  - dns
+  - route 53
+  - how-to
+  - aws cli
 ---
 
 Update, i'm still dedicated to doing as much as I can through the AWS CLI. I've learned a ton this way and it's given me better insight into what's possible with different aws services. Learned a ton about using `sed` as well. Even though the find/replace in vim is nearly identical to sed it took me a few hours of reading the docs and stackoverflow posts about the syntax for regular expressions to really get the hang of it. While sed's an awesome tool to know, next time I think I want to try a [command line tool](https://stedolan.github.io/jq/) that can interact with serialized data more easily. Like everything my writing style is still a work in progress so I'll probably go back and change things around when I've found something I vibe with.
