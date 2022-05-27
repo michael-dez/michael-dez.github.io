@@ -20,6 +20,8 @@ sudo amazon-linux-extras install docker
 sudo service docker start
 # set the service to start at boot
 sudo systemctl enable docker
+# add current user to docker group
+sudo usermod -aG docker $USER
 ```
 
 ## Install Minikube (RPM)
