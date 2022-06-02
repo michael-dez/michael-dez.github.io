@@ -1,6 +1,7 @@
 ---
 title: "EndeavourOS Windows 11 Dual Boot"
 author_profile: true
+toc: true
 excerpt: "The trick is to get Windows 11 really drunk and sneak out of the house while it hangs rebooting."
 header:
   overlay_image: /assets/img/home-header.jpg
@@ -13,11 +14,10 @@ header:
     - ansible
     - checksum
 ---
-* Intro
-{:toc}
 ## Intro
 My new laptop came with Windows 11 and I'm not saying that's why absolutely nothing is working, but nothing's working. I've enjoyed using [EndeavourOS](https://endeavouros.com) for my main virtual machine recently so I'm going to try it out as my primary os.
 The plan is to:
+
 * backup a list of explicitly installed packages and ssh keys
 * shrink the windows partition
 * download the latest EndeavourOS release (currently Apollo)
@@ -41,11 +41,12 @@ ${pkgs}/$(date --iso-8601='minutes').pkgs.aur
 ```
 I added this to my `.zshrc` so that I get a backup for every new shell. The `date` command substitution adds a timestamp to the filename. A `cronjob` would be a neater solution.
 ## Shrink Windows Partition
+
 * Press **Win+r** to open the run dialog and type `diskmgmt.msc` to open the Disk Management mmc.
 * Verify that the **File System** listed for your installation partition (typically `C:`) is listed as **NTFS**
 * Right click the Volume and select **Shrink Volume**
 * Shrink the partition leaving enough room for both OS's (preference)
-<br>
+
 ## Download EndeavourOS
 [Download](https://endeavouros.com/latest-release/) however you'd like. Verify the sha512 checksum (download first) on Linux with:
 ```bash
@@ -66,8 +67,10 @@ Reboot, and make sure to press the key to change BIOS boot options before Window
 ### Partition
 If dual booting with Windows, choose **Manual Partition**
 **Don't alter your Windows partition if you intend to keep it**
+
 * Select unused space and create a 600 MB partition with a mountpoint of `/boot/efi` and `FAT32` file system
 * Select unused space and create a partition (as large as desired) with a mountpoint of `/` and `ext4` file system
+
 ## Configure with Ansible
 When installation's complete install Ansible:
 ```bash
